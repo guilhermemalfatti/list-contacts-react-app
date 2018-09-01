@@ -43,7 +43,7 @@ class ListContacts extends React.Component{
                     <input
                         className='search-contacts'
                         type='text'
-                        palceholder='Search contacts'
+                        placeholder='Search contacts'
                         value={this.state.query}
                         onChange={(event) => this.updateQuery(event.target.value)}
                     />
