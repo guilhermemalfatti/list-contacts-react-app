@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
+import { Link } from 'react-router-dom'
 
 //State components
 class ListContacts extends React.Component{
@@ -39,7 +40,7 @@ class ListContacts extends React.Component{
 
         return (
             <div className='list-contacts'>
-                <div className='list-contacs-top'>
+                <div className='list-contacts-top'>
                     <input
                         className='search-contacts'
                         type='text'
@@ -47,7 +48,13 @@ class ListContacts extends React.Component{
                         value={this.state.query}
                         onChange={(event) => this.updateQuery(event.target.value)}
                     />
+                    <Link
+                        to='/create'
+                        className='add-contact'
+                    > Add Contact</Link>
+                    
                 </div>
+                
 
                 {showingContacts.length !== contacts.length && (
                     <div className='showing-contacts'>
