@@ -20,7 +20,7 @@ class App extends Component {
 
   removeContact = (contact) =>{
 
-    //if you need update the based on the current state, usa a funcationas a callback witha  parameter that is the current state
+    //if you need update based on the current state, usa a function a callback with a  parameter that is the current state
     this.setState((state) =>({
       contacts: state.contacts.filter((c) => c.id !== contact.id)
     }))
@@ -46,13 +46,13 @@ class App extends Component {
     return (
       <div>
           <Route exact path='/' render={() => (
-              <ListContacts 
-                contacts={this.state.contacts} 
+              <ListContacts
+                contacts={this.state.contacts}
                 onDeleteContent={this.removeContact}/>
             )}
           />
 
-        
+
         <Route path='/create' render={({ history }) => (
           <CreateContact
             onCreateContact={(contact) => {
@@ -61,7 +61,7 @@ class App extends Component {
             }}
           />
         )}/>
-        
+
       </div>
     )
   }
